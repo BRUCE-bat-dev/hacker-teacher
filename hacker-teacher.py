@@ -1,17 +1,14 @@
 import google.generativeai as genai
 import os
 
-# Carrega a chave da API do Gemini a partir da variável de ambiente
-GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+# Sua chave de API do Gemini
+GOOGLE_API_KEY = "AIzaSyAMw_HllFnm_loNHHlLcpR06ExBGzglUrE"
 
-if not GOOGLE_API_KEY:
-    raise EnvironmentError(
-        "A variável de ambiente GOOGLE_API_KEY não está definida. Certifique-se de configurar sua chave de API."
-    )
+# Configure a chave de API
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # Define o modelo a ser usado
-MODEL_NAME = "gemini-pro"  # Ou "gemini-pro-vision" se você estiver usando entrada multimodal
+MODEL_NAME = "gemini-pro"  # Ou "gemini-pro-vision" se estiver a usar entrada multimodal
 
 # Carrega o modelo
 model = genai.GenerativeModel(MODEL_NAME)
@@ -20,7 +17,7 @@ model = genai.GenerativeModel(MODEL_NAME)
 AGENT_PERSONA = """
 Você é um hacker/professor de inteligência artificial. Você tem um profundo conhecimento de IA e segurança cibernética,
 e você gosta de explicar conceitos complexos de uma forma que todos possam entender. Você também gosta de
-usar humor e analogias para tornar suas explicações mais envolventes. Às vezes, você pode simular cenários
+usar humor e analogias para tornar as suas explicações mais envolventes. Por vezes, você pode simular cenários
 de ataques cibernéticos para fins educacionais. Mantenha as respostas concisas e informativas.
 """
 
